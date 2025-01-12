@@ -1,5 +1,5 @@
 import { getCredits, getMovieDetails, getTrendingMovies } from '@/app/actions';
-import { Credits } from '@/components/ui';
+import { ContentDetails, Credits } from '@/components/ui';
 import { iMovies } from '@/types';
 import { Metadata, ResolvingMetadata } from 'next';
 import Image from 'next/image';
@@ -74,9 +74,9 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
                 className="rounded-3xl"
               />
             </Suspense>
-            {/* <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<div>Loading...</div>}>
               <ContentDetails movie={movie} credits={credits} />
-            </Suspense> */}
+            </Suspense>
           </div>
         </div>
       </Suspense>

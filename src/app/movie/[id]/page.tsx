@@ -1,8 +1,10 @@
 import { getCredits, getMovieDetails, getTrendingMovies } from '@/app/actions';
 import { ContentDetails, Credits } from '@/components/ui';
 import { iMovies } from '@/types';
+import { ArrowBackIos } from '@mui/icons-material';
 import { Metadata, ResolvingMetadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 
@@ -57,6 +59,10 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
 
   return (
     <main>
+      <Link href="/">
+        <ArrowBackIos /> atrás
+      </Link>
+
       <Suspense fallback={<div>Loading...</div>}>
         <div
           style={{

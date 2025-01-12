@@ -9,15 +9,15 @@ import { useEffect, useState } from 'react';
 export const Carousel = () => {
   const [favorites, setFavorites] = useState<Result[]>([]);
   const [scroll, setScroll] = useState('init');
-  if (!favorites.length) {
-    return <></>;
-  }
   useEffect(() => {
     const getfavoritesMovies = localStorage?.getItem('favoritesMovies');
     const favoritesMovies = getfavoritesMovies ? JSON.parse(getfavoritesMovies) : [];
     setFavorites(favoritesMovies);
   }, []);
 
+  if (!favorites.length) {
+    return <></>;
+  }
   return (
     <div className="px-3 py-5 relative">
       <h2 className="text-2xl font-bold mb-4">

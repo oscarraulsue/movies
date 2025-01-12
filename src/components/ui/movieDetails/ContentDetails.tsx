@@ -19,11 +19,13 @@ export const ContentDetails = ({ movie }: { movie: iMovie; credits: iCredits }) 
       <div>
         <h1 className="text-5xl font-bold text-white shadow-lg">{movie.title}</h1>
         <div
-          className="flex gap-4 text-xl text-gray-500"
+          className="flex flex-col sm:flex-row gap-4 text-xl text-gray-500"
           style={{ textShadow: '1px 1px 1px white' }}
         >
           <p>{movie.release_date}</p>
-          {movie.genres?.map(genre => <span key={genre.id}>{genre.name}</span>)}
+          <div className="flex gap-2">
+            {movie.genres?.map(genre => <span key={genre.id}>{genre.name}</span>)}
+          </div>
           <p>
             Duración: {hours}:{minutes}:{seconds}
           </p>

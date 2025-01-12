@@ -16,14 +16,14 @@ export interface ResultVideos {
   id: string;
 }
 
-export enum ISO3166_1 {
-  Us = 'US',
+export interface ISO3166_1 {
+  Us: 'US';
 }
 
-export enum ISO639_1 {
-  En = 'en',
+export interface ISO639_1 {
+  En: 'en';
 }
 
-export enum Site {
-  YouTube = 'YouTube',
+export interface Site {
+  YouTube: 'YouTube';
 }

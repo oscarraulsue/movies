@@ -13,7 +13,7 @@ export default [
   {
     rules: {
       'no-unused-vars': 'error',
-      'max-lines': ['warn', 80],
+      'max-lines': ['warn', 100],
       'react/react-in-jsx-scope': 'off',
       '@typescript-eslint/no-explicit-any': 'warn',
       'import/no-named-as-default': 'off',

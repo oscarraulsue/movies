@@ -1,7 +1,6 @@
 import { getCredits, getMovieDetails, getTrendingMovies } from '@/app/actions';
 import { ContentDetails, Credits } from '@/components/ui';
 import { iMovies } from '@/types';
-import classNames from 'classnames';
 import { Metadata, ResolvingMetadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';

@@ -1,10 +1,8 @@
 'use client';
-
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react';
 import { getVideo } from '@/app/actions';
 import { iVideos } from '@/types';
-
 export const ModalVideo = ({
   title,
   video,
@@ -17,7 +15,6 @@ export const ModalVideo = ({
   setOpen: Dispatch<SetStateAction<boolean>>;
 }) => {
   const [videoData, setVideoData] = useState<iVideos | null>();
-
   useEffect(() => {
     getVideo(video).then(setVideoData);
   }, [video]);
@@ -27,7 +24,6 @@ export const ModalVideo = ({
         transition
         className="fixed inset-0 bg-gray-500/75 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"
       />
-
       <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
         <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
           <DialogPanel

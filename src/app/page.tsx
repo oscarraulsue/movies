@@ -3,9 +3,11 @@ import { notFound } from 'next/navigation';
 import './globals.css';
 import { Carousel } from '@/components/commons';
 import { MoviesSection } from '@/components/ui/home/MoviesSection';
+import { Suspense } from 'react';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
+    metadataBase: new URL('https://acme.com'),
     title: 'The Movie Database',
     description: 'Encuentra las mejores películas y series de televisión',
     creator: 'Oscar Sue',
@@ -48,8 +50,10 @@ export default async function Home({
   return (
     <main className="min-h-[calc(100vh-64px)] items-center">
       <div>
-        {!searchData.search && <Carousel />}
-        <MoviesSection movies={movies} />
+        <Suspense fallback={<div>Loading...</div>}>{!searchData.search && <Carousel />}</Suspense>
+        <Suspense fallback={<div>Loading...</div>}>
+          <MoviesSection movies={movies} />
+        </Suspense>
       </div>
     </main>
   );

@@ -1,9 +1,10 @@
 import { getCredits, getMovieDetails, getTrendingMovies } from '@/app/actions';
-import { ContentDetails, Credits } from '@/components/ui';
+import { Credits } from '@/components/ui';
 import { iMovies } from '@/types';
 import { Metadata, ResolvingMetadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
+import { Suspense } from 'react';
 
 export async function generateStaticParams() {
   const movies: iMovies = await getTrendingMovies(1);
@@ -26,6 +27,7 @@ export async function generateMetadata(
   const previousImages = (await parent).openGraph?.images || [];
 
   return {
+    metadataBase: new URL('https://acme.com'),
     title: movie.title,
     description: movie.overview,
     creator: 'Oscar Sue',
@@ -55,24 +57,32 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
 
   return (
     <main>
-      <div
-        style={{
-          backgroundImage: `url('https://www.themoviedb.org/t/p/w1280${movie.backdrop_path})`,
-          height: 'calc(100vh - 64px)',
-        }}
-      >
-        <div className="bg-slate-800/[0.7] h-full flex gap-4 p-5">
-          <Image
-            width={400}
-            height={600}
-            src={`https://www.themoviedb.org/t/p/w1280${movie.poster_path}`}
-            alt={movie.title}
-            className="rounded-3xl"
-          />
-          <ContentDetails movie={movie} credits={credits} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <div
+          style={{
+            backgroundImage: `url('https://www.themoviedb.org/t/p/w1280${movie.backdrop_path})`,
+            height: 'calc(100vh - 64px)',
+          }}
+        >
+          <div className="bg-slate-800/[0.7] h-full flex gap-4 p-5">
+            <Suspense fallback={<div>Loading...</div>}>
+              <Image
+                width={400}
+                height={600}
+                src={`https://www.themoviedb.org/t/p/w1280${movie.poster_path}`}
+                alt={movie.title}
+                className="rounded-3xl"
+              />
+            </Suspense>
+            {/* <Suspense fallback={<div>Loading...</div>}>
+              <ContentDetails movie={movie} credits={credits} />
+            </Suspense> */}
+          </div>
         </div>
-      </div>
-      <Credits credits={credits} />
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Credits credits={credits} />
+      </Suspense>
     </main>
   );
 }

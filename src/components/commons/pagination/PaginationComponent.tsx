@@ -4,7 +4,7 @@ import { restartScroll } from '@/hooks';
 import { iMovies } from '@/types';
 import { Pagination } from '@mui/material';
 import { useSearchParams } from 'next/navigation';
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction, Suspense } from 'react';
 
 async function onChange({
   page,
@@ -33,14 +33,16 @@ export function PaginationComponent({
 
   return (
     <div className="w-full flex items-center justify-center py-5">
-      <Pagination
-        count={count}
-        color="primary"
-        onChange={(_, value) => {
-          restartScroll();
-          onChange({ page: value, setDataPage, params });
-        }}
-      />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Pagination
+          count={count}
+          color="primary"
+          onChange={(_, value) => {
+            restartScroll();
+            onChange({ page: value, setDataPage, params });
+          }}
+        />
+      </Suspense>
     </div>
   );
 }

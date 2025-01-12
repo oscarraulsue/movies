@@ -4,16 +4,19 @@ import { scrollX } from '@/hooks';
 import { Result } from '@/types';
 import { ArrowBackIosNew, ArrowForwardIos, StarRateOutlined } from '@mui/icons-material';
 import { IconButton } from '@mui/material';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export const Carousel = () => {
-  const getfavoritesMovies = localStorage?.getItem('favoritesMovies');
-  const favoritesMovies = getfavoritesMovies ? JSON.parse(getfavoritesMovies) : [];
-  const [favorites, setFavorites] = useState<Result[]>(favoritesMovies);
+  const [favorites, setFavorites] = useState<Result[]>([]);
   const [scroll, setScroll] = useState('init');
   if (!favorites.length) {
     return <></>;
   }
+  useEffect(() => {
+    const getfavoritesMovies = localStorage?.getItem('favoritesMovies');
+    const favoritesMovies = getfavoritesMovies ? JSON.parse(getfavoritesMovies) : [];
+    setFavorites(favoritesMovies);
+  }, []);
 
   return (
     <div className="px-3 py-5 relative">

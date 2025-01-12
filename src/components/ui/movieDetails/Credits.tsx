@@ -10,7 +10,7 @@ export const Credits = ({ credits }: { credits: iCredits }) => {
             className="bg-gray-300 border flex flex-col justify-between items-center border-gray-950 text-center rounded-b-3xl p-2"
           >
             <img
-              className="max-w-[100px] sm:max-w-[200px]"
+              className="w-[100px] sm:w-[200px] max-w-full"
               src={
                 cast.profile_path
                   ? `https://www.themoviedb.org/t/p/w1280${cast.profile_path}`

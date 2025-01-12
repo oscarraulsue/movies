@@ -4,43 +4,43 @@ This project is build with React, Vite, Material UI, and TypeScript.
 
 ## Demo
 
-<img src="/pantalla1.png"/>
+<img src="/public/pantalla1.png"/>
 
-<img src="/pantalla2.png"/>
+<img src="/public/pantalla2.png"/>
 
-<img src="/pantalla3.png"/>
+<img src="/public/pantalla3.png"/>
 
-<img src="/pantalla4.png"/>
+<img src="/public/pantalla4.png"/>
 
-<img src="/pantalla5.png"/>
+<img src="/public/pantalla5.png"/>
 
-<img src="/pantalla6.png"/>
+<img src="/public/pantalla6.png"/>
 
-<img src="/pantalla7.png"/>
+<img src="/public/pantalla7.png"/>
 
-<img src="/pantalla8.png"/>
+<img src="/public/pantalla8.png"/>
 
-<img src="/pantalla9.png"/>
+<img src="/public/pantalla9.png"/>
 
-<img src="/pantalla10.png"/>
+<img src="/public/pantalla10.png"/>
 
-<img src="/pantalla11.png"/>
+<img src="/public/pantalla11.png"/>
 
-<img src="/pantalla12.png"/>
+<img src="/public/pantalla12.png"/>
 
-<img src="/pantalla13.png"/>
+<img src="/public/pantalla13.png"/>
 
-<img src="/pantalla14.png"/>
+<img src="/public/pantalla14.png"/>
 
-<img src="/pantalla15.png"/>
+<img src="/public/pantalla15.png"/>
 
-<img src="/pantalla16.png"/>
+<img src="/public/pantalla16.png"/>
 
-<img src="/pantalla17.png"/>
+<img src="/public/pantalla17.png"/>
 
-<img src="/pantalla18.png"/>
+<img src="/public/pantalla18.png"/>
 
-<img src="/pantalla19.png"/>
+<img src="/public/pantalla19.png"/>
 
 ## Clone the Repository
 
@@ -66,9 +66,13 @@ Now you have successfully cloned the repository and can start working on it.
 
 You can create a `.env` file in the root directory to set environment variables.
 
-`URL_BASE="https://api.themoviedb.org/3"`
+```sh
+URL_BASE=https://api.themoviedb.org/3
+```
 
-`TOKEN=""` is your api key from https://api.themoviedb.org
+```sh
+TOKEN="" "is your api key from https://api.themoviedb.org"
+```
 
 ## Install Dependencies
 
@@ -107,7 +111,9 @@ Now all the dependencies should be installed, and you can proceed with running t
 
 In the project directory, you can run:
 
-`npm run dev`
+```sh
+npm run dev
+```
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -118,7 +124,9 @@ The page performance is very fast, and the page will reload if you make edits.\
 
 For Eslint, you can run:
 
-`npm run lint`
+```sh
+npm run lint
+```
 
 ## Build Options
 

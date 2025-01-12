@@ -7,7 +7,7 @@ import { Suspense } from 'react';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    metadataBase: new URL('https://acme.com'),
+    metadataBase: new URL('https://movies-neon-eta.vercel.app/'),
     title: 'The Movie Database',
     description: 'Encuentra las mejores películas y series de televisión',
     creator: 'Oscar Sue',
@@ -16,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: 'The Movie Database',
       description: 'Encuentra las mejores películas y series de televisión',
       type: 'website',
-      url: 'https://localhost:3000/',
+      url: 'https://movies-neon-eta.vercel.app/',
       siteName: 'The Movie Database',
     },
     twitter: {

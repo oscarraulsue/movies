@@ -27,7 +27,7 @@ export async function generateMetadata(
   const previousImages = (await parent).openGraph?.images || [];
 
   return {
-    metadataBase: new URL('https://acme.com'),
+    metadataBase: new URL('https://movies-neon-eta.vercel.app/'),
     title: movie.title,
     description: movie.overview,
     creator: 'Oscar Sue',

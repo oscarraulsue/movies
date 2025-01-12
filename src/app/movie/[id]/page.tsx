@@ -64,14 +64,14 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
             height: 'calc(100vh - 64px)',
           }}
         >
-          <div className="bg-slate-800/[0.7] h-full flex gap-4 p-5">
+          <div className="bg-slate-800/[0.7] h-full flex flex-col sm:flex-row gap-4 p-5">
             <Suspense fallback={<div>Loading...</div>}>
               <Image
                 width={400}
                 height={600}
                 src={`https://www.themoviedb.org/t/p/w1280${movie.poster_path}`}
                 alt={movie.title}
-                className="rounded-3xl"
+                className="rounded-3xl hidden sm:block"
               />
             </Suspense>
             <Suspense fallback={<div>Loading...</div>}>

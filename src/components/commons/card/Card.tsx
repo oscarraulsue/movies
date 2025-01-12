@@ -37,7 +37,7 @@ export const Card = ({
     }
   };
   return (
-    <Link href={`/movie/${movieData?.id}`} passHref>
+    <>
       <div className="relative">
         <div className="absolute " style={{ top: '3px', right: '3px' }}>
           <IconButton
@@ -48,21 +48,25 @@ export const Card = ({
             <FavoriteIcon sx={isFavorite ? { color: 'red' } : {}} />
           </IconButton>
         </div>
+        <Link href={`/movie/${movieData?.id}`} passHref>
+          <div>
+            <Image
+              src={`https://www.themoviedb.org/t/p/w1280${movieData?.poster_path}`}
+              alt={movieData?.title || ''}
+              width={250}
+              height={300}
+              className="rounded-md h-[300px] w-[250px] object-cover"
+            />
+          </div>
+        </Link>
+      </div>
+      <Link href={`/movie/${movieData?.id}`} passHref>
         <div>
-          <Image
-            src={`https://www.themoviedb.org/t/p/w1280${movieData?.poster_path}`}
-            alt={movieData?.title || ''}
-            width={250}
-            height={300}
-            className="rounded-md h-[300px] w-[250px] object-cover"
-          />
+          <h2 className="font-bold w-full">{movieData?.title}</h2>
+          <Rating name="half-rating-read" defaultValue={average} precision={0.01} readOnly />
+          <h3>{movieData?.release_date}</h3>
         </div>
-      </div>
-      <div>
-        <h2 className="font-bold w-full">{movieData?.title}</h2>
-        <Rating name="half-rating-read" defaultValue={average} precision={0.01} readOnly />
-        <h3>{movieData?.release_date}</h3>
-      </div>
-    </Link>
+      </Link>
+    </>
   );
 };

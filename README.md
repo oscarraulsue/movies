@@ -1,45 +1,181 @@
-Este es un proyecto [Next.js](https://nextjs.org) creado con [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Getting Started with Vite React
 
-## Empezando
+This project is build with React, Vite, Material UI, and TypeScript.
 
-Primero, ejecuta el servidor de desarrollo:
+## Demo
 
-```bash
-npm run dev
-# o
-yarn dev
-# o
-pnpm dev
-# o
-bun dev
+<img src="/pantalla1.png"/>
+
+<img src="/pantalla2.png"/>
+
+<img src="/pantalla3.png"/>
+
+<img src="/pantalla4.png"/>
+
+<img src="/pantalla5.png"/>
+
+<img src="/pantalla6.png"/>
+
+<img src="/pantalla7.png"/>
+
+<img src="/pantalla8.png"/>
+
+<img src="/pantalla9.png"/>
+
+<img src="/pantalla10.png"/>
+
+<img src="/pantalla11.png"/>
+
+<img src="/pantalla12.png"/>
+
+<img src="/pantalla13.png"/>
+
+<img src="/pantalla14.png"/>
+
+<img src="/pantalla15.png"/>
+
+<img src="/pantalla16.png"/>
+
+<img src="/pantalla17.png"/>
+
+<img src="/pantalla18.png"/>
+
+<img src="/pantalla19.png"/>
+
+## Clone the Repository
+
+To clone the repository, follow these steps:
+
+1. Open your terminal or command prompt.
+2. Navigate to the directory where you want to clone the repository.
+3. Run the following command:
+
+```sh
+git clone https://github.com/oscarraulsue/movies.git
 ```
 
-```bash
-# Configurar variables de entorno
-cp .env.example .env
+4. Navigate into the cloned repository:
 
-# Abre el archivo .env y añade las siguientes variables
-API_TOKEN=tu_token_de_api_aqui
-URL_BASE=https://api.themoviedb.org/3
+```sh
+cd movies
 ```
 
-Abre [http://localhost:3000](http://localhost:3000) con tu navegador para ver el resultado.
+Now you have successfully cloned the repository and can start working on it.
 
-Puedes empezar a editar la página modificando `app/page.tsx`. La página se actualiza automáticamente a medida que editas el archivo.
+## Environment Variables
 
-Este proyecto utiliza [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) para optimizar y cargar automáticamente [Geist](https://vercel.com/font), una nueva familia de fuentes para Vercel.
+You can create a `.env` file in the root directory to set environment variables.
 
-## Aprende más
+`URL_BASE="https://api.themoviedb.org/3"`
 
-Para aprender más sobre Next.js, echa un vistazo a los siguientes recursos:
+`TOKEN=""` is your api key from https://api.themoviedb.org
 
-- [Documentación de Next.js](https://nextjs.org/docs) - aprende sobre las características y API de Next.js.
-- [Aprende Next.js](https://nextjs.org/learn) - un tutorial interactivo de Next.js.
+## Install Dependencies
 
-Puedes revisar [el repositorio de GitHub de Next.js](https://github.com/vercel/next.js) - ¡tus comentarios y contribuciones son bienvenidos!
+To install the project dependencies, you have three options: using npm, yarn, or pnpm.
 
-## Despliega en Vercel
+### Using npm
 
-La forma más fácil de desplegar tu aplicación Next.js es usar la [Plataforma Vercel](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) de los creadores de Next.js.
+1. Make sure you have npm installed. If not, download and install it from [here](https://www.npmjs.com/get-npm).
+2. Run the following command in the project directory:
 
-Consulta nuestra [documentación de despliegue de Next.js](https://nextjs.org/docs/app/building-your-application/deploying) para más detalles.
+```sh
+npm install
+```
+
+### Using yarn
+
+1. Make sure you have yarn installed. If not, download and install it from [here](https://classic.yarnpkg.com/en/docs/install).
+2. Run the following command in the project directory:
+
+```sh
+yarn install
+```
+
+### Using pnpm
+
+1. Make sure you have pnpm installed. If not, download and install it from [here](https://pnpm.io/installation).
+2. Run the following command in the project directory:
+
+```sh
+pnpm install
+```
+
+Now all the dependencies should be installed, and you can proceed with running the project.
+
+## Available Scripts
+
+In the project directory, you can run:
+
+`npm run dev`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page performance is very fast, and the page will reload if you make edits.\
+
+## Run ESlint
+
+For Eslint, you can run:
+
+`npm run lint`
+
+## Build Options
+
+To build the project, you have three options: using npm, yarn, or pnpm.
+
+### Using npm
+
+1. Run the following command in the project directory:
+
+```sh
+npm run build
+```
+
+### Using yarn
+
+1. Run the following command in the project directory:
+
+```sh
+yarn build
+```
+
+### Using pnpm
+
+1. Run the following command in the project directory:
+
+```sh
+pnpm build
+```
+
+This will create an optimized production build of your application.
+
+## Start the Project Locally
+
+To start the project locally, you have three options: using npm, yarn, or pnpm.
+
+### Using npm
+
+1. Run the following command in the project directory:
+
+```sh
+npm start
+```
+
+### Using yarn
+
+1. Run the following command in the project directory:
+
+```sh
+yarn start
+```
+
+### Using pnpm
+
+1. Run the following command in the project directory:
+
+```sh
+pnpm start
+```
+
+This will start the project locally, and you can view it in the browser at [http://localhost:3000](http://localhost:3000).

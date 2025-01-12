@@ -48,7 +48,7 @@ export default async function Home({
   const movies = await data.json();
   if (!movies || movies.success === false) notFound();
   return (
-    <main className="min-h-[calc(100vh-64px)] items-center">
+    <main className="h-auto sm:min-h-[calc(100vh-64px)] items-center">
       <div>
         <Suspense fallback={<div>Loading...</div>}>{!searchData.search && <Carousel />}</Suspense>
         <Suspense fallback={<div>Loading...</div>}>
